@@ -1,0 +1,16 @@
+MODULE CRPI_Common(SYSMODULE)
+  PERS robtarget rs_l_p;
+  PERS bool rs_l_p_used:=FALSE;
+  PERS robtarget rs_r_p;
+  PERS bool rs_r_p used:=FALSE;
+
+  PERS jointtarget rs_l_j;
+  PERS bool rs_l_j_used:=FALSE;
+  PERS jointtarget rs_r_j;
+  PERS bool rs_r_j_used:=FALSE
+
+  PERS num torque_array_l(8);
+  PERS bool torque_array_l_used:=FALSE;
+  PERS num torque_array_r(8);
+  PERS bool torque_array_r_used:=FALSE;
+ENDMODULE

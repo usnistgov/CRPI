@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TrackFileAccess>false</TrackFileAccess>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="crcl_xml.cpp" />
+    <ClCompile Include="crpi_allegro.cpp" />
+    <ClCompile Include="crpi_abb.cpp" />
+    <ClCompile Include="crpi_kuka_lwr.cpp" />
+    <ClCompile Include="crpi_robot.cpp" />
+    <ClCompile Include="crpi_robotiq.cpp" />
+    <ClCompile Include="crpi_robot_xml.cpp" />
+    <ClCompile Include="crpi_schunk_sdh.cpp" />
+    <ClCompile Include="crpi_universal.cpp" />
+    <ClCompile Include="crpi_xml.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="crpi.h" />
+    <ClInclude Include="crpi_allegro.h" />
+    <ClInclude Include="crpi_abb.h" />
+    <ClInclude Include="crpi_kuka_lwr.h" />
+    <ClInclude Include="crpi_robot.h" />
+    <ClInclude Include="crpi_robotiq.h" />
+    <ClInclude Include="crpi_robot_xml.h" />
+    <ClInclude Include="crpi_schunk_sdh.h" />
+    <ClInclude Include="crpi_universal.h" />
+    <ClInclude Include="crpi_xml.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F4860F51-78F2-4C0F-8B57-94C7BF1B24B7}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>nist_core</RootNamespace>
+    <ProjectName>Library_CRPI</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\Debug\</OutDir>
+    <IntDir>..\..\Debug\CRPI\</IntDir>
+    <TargetName>Library_CRPI</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <ExtensionsToDeleteOnClean>*.cdf;*.cache;*.obj;*.obj.enc;*.ilk;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.idb;*.rep;*.xdc;*.pdb;*_manifest.rc;*.bsc;*.sbr;*.metagen;*.bi</ExtensionsToDeleteOnClean>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>Library_CRPI</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <ExtensionsToDeleteOnClean>*.cdf;*.cache;*.obj;*.obj.enc;*.ilk;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.idb;*.rep;*.xdc;*.pdb;*_manifest.rc;*.bsc;*.sbr;*.metagen;*.bi</ExtensionsToDeleteOnClean>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\Release\</OutDir>
+    <IntDir>..\..\Release\CRPI\</IntDir>
+    <TargetName>Library_CRPI</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>Library_CRPI</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\Libraries\ulapi;..\..\Libraries\;..\ulapi\src;..\..\Libraries\ulapi\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <ProgramDataBaseFileName>..\..\Debug\CRPI\Library_CRPI.pdb</ProgramDataBaseFileName>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <PrecompiledHeaderOutputFile>..\..\Debug\CRPI\Library_CRPI.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>..\..\Debug\</AssemblerListingLocation>
+      <ObjectFileName>..\..\Debug\</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ulapi_VS2015.lib;ws2_32.lib;winmm.lib;serial.lib</AdditionalDependencies>
+      <OutputFile>..\..\Debug\Library_CRPI.dll</OutputFile>
+      <AdditionalLibraryDirectories>..\..\Debug</AdditionalLibraryDirectories>
+      <ImportLibrary>..\..\Debug\Library_CRPI.lib</ImportLibrary>
+      <ProgramDatabaseFile>..\..\Debug\CRPI\Library_CRPI.pdb</ProgramDatabaseFile>
+    </Link>
+    <BuildLog>
+      <Path>..\..\Debug\CRPI\CRPI_BuildLog.htm</Path>
+    </BuildLog>
+    <Bscmake>
+      <OutputFile>..\..\Debug\CRPI\Librarcy_CRPI.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\Libraries\ulapi;..\ulapi\src;..\..\Libraries\ulapi\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <ProgramDataBaseFileName>../../Debug/Library_CRPI.pdb</ProgramDataBaseFileName>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ulapi_VS2015.lib;ws2_32.lib;winmm.lib</AdditionalDependencies>
+      <OutputFile>../../Debug/Library_CRPI.dll</OutputFile>
+      <AdditionalLibraryDirectories>..\..\Debug</AdditionalLibraryDirectories>
+      <ImportLibrary>..\..\Debug\Library_CRPI.lib</ImportLibrary>
+    </Link>
+    <BuildLog>
+      <Path>..\..\Debug\CRPI\CRPI_BuildLog.htm</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\Libraries\ulapi;..\ulapi\src;..\..\Libraries\;..\..\Libraries\ulapi\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ProgramDataBaseFileName>..\..\Release\CRPI\Library_CRPI.pdb</ProgramDataBaseFileName>
+      <AssemblerListingLocation>..\..\Release\</AssemblerListingLocation>
+      <ObjectFileName>..\..\Release\</ObjectFileName>
+      <PrecompiledHeaderOutputFile>..\..\Release\CRPI\Library_CRPI.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>..\..\Release\Library_CRPI.dll</OutputFile>
+      <AdditionalLibraryDirectories>../../Release</AdditionalLibraryDirectories>
+      <ImportLibrary>..\..\Release\Library_CRPI.lib</ImportLibrary>
+      <AdditionalDependencies>ulapi_VS2015.lib;ws2_32.lib;winmm.lib;serial.lib</AdditionalDependencies>
+      <ProgramDatabaseFile>..\..\Release\CRPI\Library_CRPI.pdb</ProgramDatabaseFile>
+    </Link>
+    <BuildLog>
+      <Path>..\..\Release\CRPI\Library_CRPI_BuildLog.htm</Path>
+    </BuildLog>
+    <Bscmake>
+      <OutputFile>..\..\Release\CRPI\Librarcy_CRPI.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\Libraries\ulapi;..\ulapi\src;..\..\Libraries\ulapi\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>../../Release/Library_CRPI.dll</OutputFile>
+      <AdditionalLibraryDirectories>../../Release</AdditionalLibraryDirectories>
+    </Link>
+    <BuildLog>
+      <Path>..\..\Release\CRPI\Library_CRPI_BuildLog.htm</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

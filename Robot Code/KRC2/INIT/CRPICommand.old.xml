@@ -1,0 +1,19 @@
+<Elements>
+  <Element Tag="ExternalData" Type="STRUCTTAG" Stacksize="1" />
+   <Element Tag="ExternalData.TString" Type="STRING" Size="80" Stacksize="1" />
+   <Element Tag="ExternalData.FrameID" Type="INTEGER" Stacksize="1" />
+   <Element Tag="ExternalData.Position" Type="STRUCTTAG" Stacksize="1" />
+      <Element Tag="ExternalData.Position.XPos" Type="REAL" Stacksize="1" />
+      <Element Tag="ExternalData.Position.YPos" Type="REAL" Stacksize="1" />
+      <Element Tag="ExternalData.Position.ZPos" Type="REAL" Stacksize="1" /> 
+      <Element Tag="ExternalData.Position.ZRot" Type="REAL" Stacksize="1" />
+      <Element Tag="ExternalData.Position.YRot" Type="REAL" Stacksize="1" />
+      <Element Tag="ExternalData.Position.XRot" Type="REAL" Stacksize="1" />
+   <Element Tag="ExternalData.Ints" Type="STRUCTTAG" Stacksize="1" />
+      <Element Tag="ExternalData.Ints.AState" Type="INTEGER" Stacksize="1" />	
+      <Element Tag="ExternalData.Ints.BState" Type="INTEGER" Stacksize="1" />
+   <Element Tag="ExternalData.Boolean" Type="STRUCTTAG" Stacksize="1" />
+      <Element Tag="ExternalData.Boolean.CState" Type="BOOLEAN" Stacksize="1" />
+   <Element Tag="ExternalData.Frames" Type="STRUCTTAG" Stacksize="5" OnTagSetPort="1" />      
+      <Element Tag="ExternalData.Frames.XFrame" Type="FRAME" Stacksize="10" />
+</Elements>

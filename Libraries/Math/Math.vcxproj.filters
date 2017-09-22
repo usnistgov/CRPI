@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="NumericalMath.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorMath.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="MatrixMath.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="NumericalMath.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\portable.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorMath.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{18daa12d-4947-45b0-8b09-dc66eed954ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{53b65f73-44fd-4e49-9dd8-2c5cc05c00f1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

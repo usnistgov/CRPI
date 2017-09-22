@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Cluster\Cluster.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="kMeans\kMeansCluster.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Patterns\Pattern.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H" />
+    <ClInclude Include="..\portable.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Patterns\Pattern.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="kMeans\kMeansCluster.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Cluster\Cluster.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{aa006865-ef4e-473d-8c77-aae8d1a4f083}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{64496442-e25b-4fd5-82c9-55db953fa17e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

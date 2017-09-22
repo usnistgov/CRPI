@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="crcl_xml.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="crpi_demo_hack.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="crpi_kuka_lwr.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="crpi_robot.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="crpi_robot_xml.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="crpi_robotiq.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="crpi_schunk_sdh.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="crpi_universal.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="crpi_xml.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="nist_core.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="serial.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="crpi_allegro.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="crpi_abb.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="crpi.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="crpi_demo_hack.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="crpi_kuka_lwr.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="crpi_robot.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="crpi_robot_xml.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="crpi_robotiq.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="crpi_schunk_sdh.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="crpi_universal.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="crpi_xml.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="nist_core.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="serial.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="crpi_allegro.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="crpi_abb.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{a4b041c2-3694-4df0-88f0-76f3aecc0e73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{f7cc96fc-9666-4a7c-9a9f-f3b2658e0323}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="NumericalMath.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorMath.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Filters.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H" />
+    <ClInclude Include="MatrixMath.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="NumericalMath.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\portable.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorMath.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Filters.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{c9e0fc73-f9f4-4126-9854-9f0f5c8733ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{c1856cc6-ecdf-4fb0-a5ba-f0a58474253e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
