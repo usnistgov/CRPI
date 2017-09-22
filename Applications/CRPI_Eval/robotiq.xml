@@ -1,0 +1,4 @@
+<ROBOT>
+  <TCP_IP Address="169.254.152.31" Port="502" Client="true">
+  <ComType Val="TCP_IP"/>
+</ROBOT>

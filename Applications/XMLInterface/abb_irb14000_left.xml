@@ -1,0 +1,8 @@
+<ROBOT>
+ <TCP_IP Address="169.254.152.80" Port="1025" Client="false"/>
+  <ComType Val="TCP_IP"/>
+  <Mounting X="0" Y="0" Z="0" XR="0" YR="0" ZR="0"/>
+  <ToWorld X="890" Y="890" Z="0" XR="0" YR="0" ZR="0" M00="1" M01="0" M02="0" M03="890" M10="0" M11="1" M12="0" M13="890" M20="-0" M21="0" M22="1" M23="0" M30="0" M31="0" M32="0" M33="1"/>
+  <Tool ID="1" Name="Yumi_Parallel" X="0" Y="0" Z="136.0" XR="0" YR="0" ZR="0" Mass="0.0.262" MX="7.8" MY="11.9" MZ="50.7"/>
+  <Tool ID="2" Name="Yumi_Vacuum" X="63.5" Y="18.5" Z="37.5" XR="0" YR="90" ZR="0" Mass="0.0.262" MX="7.8" MY="11.9" MZ="50.7"/>
+</ROBOT>
