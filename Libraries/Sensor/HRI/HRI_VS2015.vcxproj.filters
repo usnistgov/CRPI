@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{ce598472-dc67-4a98-a0f0-293b18e26dc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{bd70bb96-8d6e-4ca9-a2f6-396945aa06dd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LeapMotion.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="MYO.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="ManusVR.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LeapMotion.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="MYO.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ManusVR.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
