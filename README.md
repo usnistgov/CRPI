@@ -8,7 +8,7 @@ CRPI runs on Windows and Linux machines, though some libraries are limited on th
 
 On Windows machines, CRPI requires Visual Studio 2015 or higher. 
 
-On Linux Machines, CRPI requires you to first install`[ULAPI](https://github.com/frederickproctor/ulapi)` 
+On Linux Machines, CRPI requires you to first install [ULAPI](https://github.com/frederickproctor/ulapi)
 
 ## Building 
 
