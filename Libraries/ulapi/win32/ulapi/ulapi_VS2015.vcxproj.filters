@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\src\inifile.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ulapi_getopt.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\win32_rtapi.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\win32_ulapi.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\inifile.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rtapi.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\serial.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\ulapi.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\ulapi_getopt.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{4e2738cd-416b-44cb-96aa-598acb22f6ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{b6e6b5f4-9ddd-4d26-8571-01b66552b862}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

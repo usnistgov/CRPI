@@ -18,4 +18,4 @@ On linux machines, to build all libraries for CRPI, run the following command in
 To clean your build of CRPI run
 >python buildLinuxCRPI.py -c
 
-On windows machines, you can directly debug from the sample application or the UnitTest application in the CRPI visual studio solution. 
+On windows machines, you can directly debug from the sample application or the UnitTest application in the CRPI_lite visual studio solution. 
