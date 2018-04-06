@@ -1,0 +1,25 @@
+#!/bin/sh
+
+UTS_RELEASE=`uname -r | cut -f 1,2 -d .`
+
+# set up symbolic links to our code base
+echo -n setting up symlinks...
+for file in ../src/rtapi.h ../src/rtapi_app.h ../src/rtai_rtapi.c ../src/rtai_rtapi_hal.c ; do ln -s $file 2> /dev/null ; done
+echo done
+
+if [ "$UTS_RELEASE" = 2.4 ] ; then
+    echo nothing else to do for $UTS_RELEASE
+else
+
+if [ "$UTS_RELEASE" = 2.6 ] ; then
+
+# make the RTAI shared memory and FIFOs
+    echo making /dev/rtai_shm and /dev/rtf\[0-9\] for $UTS_RELEASE
+    sudo mknod -m 666 /dev/rtai_shm c 10 254 2> /dev/null
+    for n in 0 1 2 3 4 5 6 7 8 9 ; do sudo mknod -m 666 /dev/rtf$n c 150 $n 2> /dev/null ; done
+
+fi
+
+fi
+
+exit 0

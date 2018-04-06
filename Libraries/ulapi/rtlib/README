@@ -1,0 +1,7 @@
+# To get links to all the necessary code, do this:
+
+for file in ../src/*.{c,h} ; do ln -s $file 2> /dev/null ; done
+
+# To build the shared memory device entry, do this:
+
+sudo mknod -m 666 /dev/rtai_shm c 10 254
