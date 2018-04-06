@@ -1,0 +1,7 @@
+<Modules>
+    <Module path="bin\nimRecorder.dll" />
+    <Module path="bin\nimMockNodes.dll" />
+    <Module path="bin\nimCodecs.dll" />
+    <Module path="bin\XnDeviceFile.dll" />
+    <Module path="bin\XnDeviceSensorV2.dll" configDir="" />
+</Modules>
