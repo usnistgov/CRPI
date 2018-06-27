@@ -70,6 +70,16 @@ First public release including base CRPI code
 - Updated Liscense and Readme to comply with public repository guidelines
 - Resolve Mocap merge errors
 
+## Contributors
+Contributors of files are documented in individual files, here is a general list of contributors to the CRPI codebase and applications:
+- Jeremy Marvel (jeremy-marvel)
+- Megan Zimmerman (mlzimmer)
+- Shelly Bagchi (sbagchi7)
+- Karl Van Wyk
+- Nithya Kumbla
+- Brian Antonishek
+- Omar Aboul-Enein
+
 ## Contact
 Feel free to reach out to @mlzimmer for any questions, or post an issue to the repo.
 You can also email megan.zimmerman@nist.gov
