@@ -21,7 +21,7 @@ To clean your build of CRPI run
 On windows machines, you can directly debug from the sample application or the UnitTest application in the CRPI_lite visual studio solution. 
 
 
-##Creating CRPI applications
+## Creating CRPI applications
 
 A sample is provided in Applications/Application_CRPI_Test.
 To create a new CRPI application on windows, create a new empty C/C++ project in the CRPI_lite or CRPI_VS2015 solution with linker settings and C/C++ settings copied from the sample application, adding libraries if desired here.
