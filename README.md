@@ -26,14 +26,15 @@ On windows machines, you can directly debug from the sample application or the U
 A sample is provided in Applications/Application_CRPI_Test.
 To create a new CRPI application on windows, create a new empty C/C++ project in the CRPI_lite or CRPI_VS2015 solution with linker settings and C/C++ settings copied from the sample application, adding libraries if desired here.
 ### To create a new CRPI application on Linux
- -Create a new folder in /Applications/[Application_Name] 
- -Copy the sample makefile or generate your own makefile linking with ulapi and CRPI as needed.
+ - Create a new folder in /Applications/[Application_Name] 
+ - Copy the sample makefile or generate your own makefile linking with ulapi and CRPI as needed.
  
 ### To build your application in windows,
- -Create a new empty C/C++ project in the CRPI_lite or CRPI_VS2015 solution
- -Copy linker settings and C/C++ settings from the sample application, adding additional libraries as needed.
- -Build libaries individually, incrimentally working up to your application ie.) for the sample application build ulapi first, then libary_serial, then libary_CRPI, then Application_CRPI_Test.
- -To run your built application on windows navigate to the Debug folder and run [Application_Name].exe . 
+ - Create a new empty C/C++ project in the CRPI_lite or CRPI_VS2015 solution
+ - Copy linker settings and C/C++ settings from the sample application, adding additional libraries as needed.
+ - Build libaries individually, incrimentally working up to your application ie.) for the sample application build ulapi first, then libary_serial, then libary_CRPI, then Application_CRPI_Test.
+ - To run your built application on windows navigate to the Debug folder and run [Application_Name].exe . 
+
 It is recommended that you build libraries individually as needed within the CRPI visual studio solution.
 After the initial build, you will not need to rebuild libraries that you've already build individually unless you have made changes to them.
 
