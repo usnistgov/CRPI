@@ -31,7 +31,7 @@
 using namespace crpi_robot;
 using namespace std;
 
-void main()
+int main()			// FMP
 {
 	//! Create the robot object
 	CrpiRobot<CrpiUniversal> arm("universal_ur5.xml");
