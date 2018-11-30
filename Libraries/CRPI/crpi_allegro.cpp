@@ -103,8 +103,9 @@ namespace crpi_robot
   LIBRARY_API CanonReturn CrpiAllegro::ApplyCartesianForceTorque (robotPose &robotForceTorque, vector<bool> activeAxes, vector<bool> manipulator)
   {
     //This assumes that all toggled fingers will experience the same force/torque and active axes commands, unless disengaged with the manipulator command
-    SetParameter("Control","finger_force");
-    SetParameter("Plan","set_point"); //will need to change this to file for finger trajectory tracking for greater command bandwidth
+    // FMP
+    SetParameter("Control", const_cast<char *>("finger_force"));
+    SetParameter("Plan", const_cast<char *>("set_point")); //will need to change this to file for finger trajectory tracking for greater command bandwidth
     
     std::ostringstream sstream;
     std::string ForcesAsString;
@@ -318,8 +319,9 @@ namespace crpi_robot
 
   LIBRARY_API CanonReturn CrpiAllegro::MoveAttractor (robotPose &pose) //hijacked for grasping control
   {
-    SetParameter("Control","grasping");
-    SetParameter("Plan","set_point");
+    // FMP
+    SetParameter("Control", const_cast<char *>("grasping"));
+    SetParameter("Plan", const_cast<char *>("set_point"));
     
     std::ostringstream sstream;
     std::string PoseAsString;
@@ -374,8 +376,9 @@ namespace crpi_robot
 
   LIBRARY_API CanonReturn CrpiAllegro::MoveToAxisTarget (robotAxes &axes)
   {
-    SetParameter("Control","joint_pos");
-    SetParameter("Plan","set_point_smooth");
+    // FMP
+    SetParameter("Control", const_cast<char *>("joint_pos"));
+    SetParameter("Plan", const_cast<char *>("set_point_smooth"));
     
     std::ostringstream sstream;
     std::string AngleAsString;

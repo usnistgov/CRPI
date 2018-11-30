@@ -38,7 +38,9 @@
 
 #else
 
+#ifndef LIBRARY_API		/* FMP */
 #define LIBRARY_API
+#endif
 
 #endif
 
@@ -999,7 +1001,9 @@ public:
   //!
   ~crpi_timer ()
   {
+#ifdef WIN32			/* FMP, to match above */
     timeEndPeriod (1);
+#endif
   };
 
   //! @brief Start the timer if it isn't already running, otherwise
