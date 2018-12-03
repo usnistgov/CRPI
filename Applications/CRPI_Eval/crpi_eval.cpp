@@ -29,7 +29,7 @@
 using namespace crpi_robot;
 using namespace std;
 
-void main ()
+int main ()			// FMP
 {
   int i = 0;
   double perf1, perf2, perf3, perf4;
@@ -63,7 +63,7 @@ void main ()
 
   if (i < 1)
   {
-    return;
+    return 1;			// FMP
   }
 
   origPose = curPose;
@@ -451,6 +451,7 @@ void main ()
 
   cout << "All done" << endl;
 
+  return 0;			// FMP
 }
 
 
