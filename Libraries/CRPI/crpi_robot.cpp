@@ -28,6 +28,8 @@ using namespace std;
 #include "crpi_allegro.h"
 #include "crpi_abb.h"
 
+#include "crpi_crcl_robot.h"	// FMP
+
 //#define NOISY
 
 //! Explicit instantiations
@@ -38,6 +40,7 @@ template class LIBRARY_API crpi_robot::CrpiRobot<crpi_robot::CrpiUniversal>;
 template class LIBRARY_API crpi_robot::CrpiRobot<crpi_robot::CrpiAllegro>;
 template class LIBRARY_API crpi_robot::CrpiRobot<crpi_robot::CrpiAbb>;
 
+template class LIBRARY_API crpi_robot::CrpiRobot<crpi_robot::CrpiCrcl>; // FMP
 
 namespace crpi_robot
 {
