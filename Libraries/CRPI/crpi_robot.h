@@ -514,6 +514,9 @@ namespace crpi_robot
     //!
     CanonReturn SaveConfig (const char *file);
 
+    /* FMP */
+    CanonReturn IsValid();
+
   private:
     //! @brief Interface object for the different supported robots
     //!

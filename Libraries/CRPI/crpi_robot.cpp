@@ -49,6 +49,8 @@ namespace crpi_robot
     robotparams_ = new CrpiRobotParams();
     bypass_ = bypass;
 
+    robInterface_ = NULL;	// FMP
+
     char line[1024];
     ifstream inputs(initPath);
     if (!inputs)
@@ -1244,6 +1246,15 @@ namespace crpi_robot
     out << line;
 
     return CANON_SUCCESS;
+  }
+
+  template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::IsValid()
+  {
+    if ((bypass_) ||
+	(NULL != robInterface_)) {
+      return CANON_SUCCESS;
+    }
+    return CANON_FAILURE;
   }
 
 } // Robot
