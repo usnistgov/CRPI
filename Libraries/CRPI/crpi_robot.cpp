@@ -49,6 +49,7 @@ namespace crpi_robot
     robotparams_ = new CrpiRobotParams();
     bypass_ = bypass;
 
+    strcpy_s(robotparams_->initPath, initPath); // FMP
     robInterface_ = NULL;	// FMP
 
     char line[1024];

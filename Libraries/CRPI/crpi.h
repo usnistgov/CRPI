@@ -22,9 +22,9 @@
 #include <vector>
 #include <string>
 #include <time.h>
-#include "..\Math\MatrixMath.h"
-#include "..\Math\VectorMath.h"
-#include "..\..\portable.h"
+#include "Math/MatrixMath.h"
+#include "Math/VectorMath.h"
+#include "portable.h"
 
 #ifndef WIN32
 #include <unistd.h>
@@ -853,6 +853,10 @@ struct CrpiRobotParams
   //!
   std::vector<CrpiToolDef> tools;
 
+  // FMP
+  //! @brief Path to initialization file
+  char initPath[256];
+  
   //! @brief Default constructor
   //!
   CrpiRobotParams()
@@ -873,6 +877,7 @@ struct CrpiRobotParams
     serial_sbits = 0;
     serial_handshake[0] = '\0';
     use_serial = true;
+    initPath[0] = '\0';		// FMP
   }
 
   //! @brief Assignment function
@@ -907,6 +912,7 @@ struct CrpiRobotParams
       {
         tools.push_back(*itr);
       }
+      strcpy_s(initPath, source.initPath);
     }
     return *this;
   }

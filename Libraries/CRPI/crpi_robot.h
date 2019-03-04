@@ -556,6 +556,7 @@ namespace crpi_robot
     //! @brief Whether or not to run this in bypass mode
     //!
     bool bypass_;
+    
   }; // CrpiRobot
 } // crpi_robot
 
