@@ -121,6 +121,12 @@ typedef enum
   DEGREE
 } CanonAngleUnit;
 
+typedef enum
+{
+  PRISMATIC = 0,
+  REVOLUTE
+} CanonJointType;		// FMP
+
 //! @brief Vector representation of an axis of rotation
 //!
 struct orientVect

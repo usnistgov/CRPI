@@ -219,7 +219,7 @@ namespace crpi_robot
     //!
     CanonReturn MoveToAxisTarget (robotAxes &axes);
 
-    //! @brief Set the accerlation for the controlled pose to the given value in length units per
+    //! @brief Set the acceleration for the controlled pose to the given value in length units per
     //!        second per second
     //!
     //! @param acceleration The target TCP acceleration 
@@ -362,6 +362,9 @@ namespace crpi_robot
     //!         not accepted, and FAILURE if the command is accepted but not executed successfully
     //!
     CanonReturn StopMotion (int condition = 2);
+
+    CanonReturn SetJointType(int index, CanonJointType type);
+    CanonReturn GetJointType(int index, CanonJointType *type);
 
     //! @brief Convert CRCL XML to CRPI function calls
     //!
