@@ -1217,11 +1217,11 @@ namespace crpi_robot
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::IsValid()
   {
-    if ((bypass_) ||
-	(NULL != robInterface_)) {
-      return CANON_SUCCESS;
-    }
-    return CANON_FAILURE;
+    if (bypass_) return CANON_SUCCESS;
+    
+    if (NULL == robInterface_) return CANON_FAILURE;
+
+    return CANON_SUCCESS;
   }
 
 } // Robot

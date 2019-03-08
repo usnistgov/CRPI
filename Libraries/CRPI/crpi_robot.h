@@ -518,6 +518,9 @@ namespace crpi_robot
     CanonReturn SaveConfig (const char *file);
 
     /* FMP */
+    //! @brief Checks that the robot has benen fully initialized
+    //!
+    //! @return true if initialized, else false
     CanonReturn IsValid();
 
   private:
@@ -559,6 +562,9 @@ namespace crpi_robot
     //! @brief Whether or not to run this in bypass mode
     //!
     bool bypass_;
+
+    //! @brief True if the robot has been fully initialized
+    bool valid_;
     
   }; // CrpiRobot
 } // crpi_robot

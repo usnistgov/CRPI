@@ -496,14 +496,13 @@ struct robotAxes
   //!
   void print()
   {
-    for (int i = 0; i < axes; ++i)
-    {
-      printf("%f", axis.at(i));// [i]);
-      if (i < (axes - 1))
-      {
+    for (int i = 0; i < axes; ++i) {
+      printf("%f", axis.at(i));
+      if (i < (axes - 1)) {
         printf(", ");
       }
     }
+    printf("\n");
   }
 
   //! @brief Calculate the distance between two axis vectors
