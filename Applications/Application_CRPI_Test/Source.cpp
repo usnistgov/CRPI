@@ -31,10 +31,17 @@
 using namespace crpi_robot;
 using namespace std;
 
-void main()
+#define DEFAULT_XML_INIT_FILE "universal_ur5.xml" // FMP
+
+int main(int argc, char *argv[]) // FMP
 {
+  // FMP - using command line arg for XML init file
+  const char *xml_init_file = DEFAULT_XML_INIT_FILE;
+  if (argc > 1) {
+    xml_init_file = argv[1];
+  }
 	//! Create the robot object
-	CrpiRobot<CrpiUniversal> arm("universal_ur5.xml");
+	CrpiRobot<CrpiUniversal> arm(xml_init_file); // FMP
 
 	//! Configure the default units
 	arm.SetAngleUnits("degree");
@@ -70,4 +77,6 @@ void main()
 		cout << "Could not move robot." << endl;
 	}
 	cout << "Complete" << endl;
+
+	return 0;
 }

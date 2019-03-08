@@ -28,6 +28,8 @@ using namespace std;
 #include "crpi_allegro.h"
 #include "crpi_abb.h"
 
+#include "crpi_crcl_robot.h"	// FMP
+
 //#define NOISY
 
 //! Explicit instantiations
@@ -38,6 +40,7 @@ template class LIBRARY_API crpi_robot::CrpiRobot<crpi_robot::CrpiUniversal>;
 template class LIBRARY_API crpi_robot::CrpiRobot<crpi_robot::CrpiAllegro>;
 template class LIBRARY_API crpi_robot::CrpiRobot<crpi_robot::CrpiAbb>;
 
+template class LIBRARY_API crpi_robot::CrpiRobot<crpi_robot::CrpiCrcl>; // FMP
 
 namespace crpi_robot
 {
@@ -45,6 +48,9 @@ namespace crpi_robot
   {
     robotparams_ = new CrpiRobotParams();
     bypass_ = bypass;
+
+    strcpy_s(robotparams_->initPath, initPath); // FMP
+    robInterface_ = NULL;	// FMP
 
     char line[1024];
     ifstream inputs(initPath);
@@ -96,7 +102,6 @@ namespace crpi_robot
     crpiparams_->status = CANON_REJECT;
   }
 
-
   template <class T> LIBRARY_API CrpiRobot<T>::~CrpiRobot ()
   {
     if (!bypass_)
@@ -104,7 +109,6 @@ namespace crpi_robot
       delete robInterface_;
     }
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::SetTool (double percent)
   {
@@ -135,12 +139,19 @@ namespace crpi_robot
     return val;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::ApplyJointTorque (robotAxes &robotJointTorque)
   {
-    return CANON_SUCCESS;
-  }
+    CanonReturn val;
 
+    if (bypass_) {
+      return CANON_SUCCESS;
+    }
+
+    crpiparams_->status = CANON_RUNNING;
+    val = robInterface_->ApplyJointTorque(robotJointTorque);
+    crpiparams_->status = val;
+    return val;
+  }
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::Couple (const char *targetID)
   {
@@ -156,7 +167,6 @@ namespace crpi_robot
     crpiparams_->status = val;
     return val;
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::GetRobotAxes (robotAxes *axes)
   {
@@ -176,7 +186,6 @@ namespace crpi_robot
     return val;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::GetRobotForces (robotPose *forces)
   {
     if (bypass_)
@@ -193,7 +202,6 @@ namespace crpi_robot
     *crpiparams_->forces = *forces;
     return val;
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::GetRobotIO (robotIO *io)
   {
@@ -212,7 +220,6 @@ namespace crpi_robot
     crpiparams_->status = val;
     return val;
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::GetRobotPose (robotPose *pose)
   {
@@ -243,7 +250,6 @@ namespace crpi_robot
     return val;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::GetRobotSpeed (robotAxes *speed)
   {
     if (bypass_)
@@ -260,7 +266,6 @@ namespace crpi_robot
     return val;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::GetRobotSpeed (robotPose *speed)
   {
     if (bypass_)
@@ -275,7 +280,6 @@ namespace crpi_robot
     crpiparams_->status = val;
     return val;
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::GetRobotTorques (robotAxes *torques)
   {
@@ -294,7 +298,6 @@ namespace crpi_robot
     return val;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::Message (const char *message)
   {
     if (bypass_)
@@ -308,7 +311,6 @@ namespace crpi_robot
     return val;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::MoveStraightTo (robotPose &pose)
   {
     if (bypass_)
@@ -321,7 +323,6 @@ namespace crpi_robot
     crpiparams_->status = val;
     return val;
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::MoveThroughTo (robotPose *poses,
                                                                            int numPoses,
@@ -340,7 +341,6 @@ namespace crpi_robot
     return val;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::MoveTo (robotPose &pose)
   {
     if (bypass_)
@@ -353,7 +353,6 @@ namespace crpi_robot
     crpiparams_->status = val;
     return val;
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::MoveAttractor (robotPose &pose)
   {
@@ -368,7 +367,6 @@ namespace crpi_robot
     return val;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::MoveToAxisTarget (robotAxes &axes)
   {
     if (bypass_)
@@ -381,7 +379,6 @@ namespace crpi_robot
     crpiparams_->status = val;
     return val;
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::SetAbsoluteAcceleration (double tolerance)
   {
@@ -396,7 +393,6 @@ namespace crpi_robot
     return val;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::SetAbsoluteSpeed (double speed)
   {
     if (bypass_)
@@ -409,7 +405,6 @@ namespace crpi_robot
     crpiparams_->status = val;
     return val;
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::SetAngleUnits (const char *unitName)
   {
@@ -426,7 +421,6 @@ namespace crpi_robot
       return CANON_FAILURE;
     }
 
-
     if (bypass_)
     {
       return CANON_SUCCESS;
@@ -438,7 +432,6 @@ namespace crpi_robot
 
     return val;
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::SetAxialSpeeds (double *speeds)
   {
@@ -453,7 +446,6 @@ namespace crpi_robot
     return val;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::SetAxialUnits (const char **unitNames)
   {
     if (bypass_)
@@ -466,7 +458,6 @@ namespace crpi_robot
     crpiparams_->status = val;
     return val;
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::SetEndPoseTolerance (robotPose &tolerance)
   {
@@ -481,7 +472,6 @@ namespace crpi_robot
     return val;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::SetIntermediatePoseTolerance (robotPose *tolerances)
   {
     if (bypass_)
@@ -494,7 +484,6 @@ namespace crpi_robot
     crpiparams_->status = val;
     return val;
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::SetLengthUnits (const char *unitName)
   {
@@ -526,7 +515,6 @@ namespace crpi_robot
     return val;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::SetParameter (const char *paramName, void *paramVal)
   {
     if (bypass_)
@@ -539,7 +527,6 @@ namespace crpi_robot
     crpiparams_->status = val;
     return val;
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::SetRelativeAcceleration (double percent)
   {
@@ -554,7 +541,6 @@ namespace crpi_robot
     return val;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::SetRelativeSpeed (double percent)
   {
     if (bypass_)
@@ -567,7 +553,6 @@ namespace crpi_robot
     crpiparams_->status = val;
     return val;
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::SetRobotIO (robotIO &io)
   {
@@ -582,7 +567,6 @@ namespace crpi_robot
     return val;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::SetRobotDO (int dig_out, bool val)
   {
     if (bypass_)
@@ -596,7 +580,6 @@ namespace crpi_robot
     return retval;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::StopMotion (int condition)
   {
     if (bypass_)
@@ -609,7 +592,6 @@ namespace crpi_robot
     crpiparams_->status = val;
     return val;
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::CrclXmlHandler (std::string& str)
   {
@@ -743,7 +725,6 @@ namespace crpi_robot
      return CANON_SUCCESS;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::CrclXmlResponse (char *str)
   {
     crpiparams_->counter += 1;
@@ -870,7 +851,6 @@ namespace crpi_robot
      return CANON_SUCCESS;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::CrpiXmlResponse (char *str)
   {
     crpiparams_->counter += 1;
@@ -895,7 +875,6 @@ namespace crpi_robot
 
     return CANON_SUCCESS;
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::ToWorld (robotPose *in, robotPose *out)
   {
@@ -928,7 +907,6 @@ namespace crpi_robot
       return CANON_FAILURE;
     }
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::FromWorld (robotPose *in, robotPose *out)
   {
@@ -964,7 +942,6 @@ namespace crpi_robot
       return CANON_FAILURE;
     }
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::ToSystem (const char *name,
                                                                      robotPose *in,
@@ -1014,7 +991,6 @@ namespace crpi_robot
       return CANON_FAILURE;
     }
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::FromSystem (const char *name,
                                                                        robotPose *in,
@@ -1066,7 +1042,6 @@ namespace crpi_robot
     }
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::ToSystemMatrix(const char *name, matrix & R_T_W)
   {
     R_T_W.resize(4, 4);
@@ -1098,7 +1073,6 @@ namespace crpi_robot
   }
 
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::UpdateWorldTransform(robotPose &newToWorld)
   {
     *(robotparams_->toWorld) = newToWorld;
@@ -1111,7 +1085,6 @@ namespace crpi_robot
     return CANON_FAILURE;
   }
 
-
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::UpdateWorldTransform (matrix &newToWorld)
   {
     *(robotparams_->toWorldMatrix) = newToWorld;
@@ -1123,7 +1096,6 @@ namespace crpi_robot
     }
     return CANON_FAILURE;
   }
-
 
   template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::UpdateSystemTransform (const char *name,
                                                                                   robotPose &newToSystem)
@@ -1239,6 +1211,15 @@ namespace crpi_robot
     robXML.encode(line);
     ofstream out(file);
     out << line;
+
+    return CANON_SUCCESS;
+  }
+
+  template <class T> LIBRARY_API CanonReturn CrpiRobot<T>::IsValid()
+  {
+    if (bypass_) return CANON_SUCCESS;
+    
+    if (NULL == robInterface_) return CANON_FAILURE;
 
     return CANON_SUCCESS;
   }

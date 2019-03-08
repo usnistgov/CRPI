@@ -36,9 +36,45 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <errno.h>
+
+/* FMP */
+/*
+  WIN32 'Sleep' is defined as:
+  void Sleep(
+  DWORD dwMilliseconds
+  );
+
+  We will map this to ulapi's implementation, 
+
+  void ulapi_sleep(ulapi_real secs);
+*/
+#include "ulapi.h"
+#define Sleep(x) ulapi_sleep(((double) (x)) * 0.001)
+
+typedef union _LARGE_INTEGER {
+  struct {
+    unsigned long LowPart;
+    long HighPart;
+  };
+  struct {
+    unsigned long LowPart;
+    long HighPart;
+  } u;
+  long long QuadPart;
+} LARGE_INTEGER, *PLARGE_INTEGER;
+
+typedef long long LONGLONG;
+
+/* this differs from the C11 decl, which is
+   errno_t strcpy_s(char *restrict dest, rsize_t destsz, const char *restrict src);
+*/
+inline int strcpy_s(char *dst, const char *src)
+{
+  strcpy(dst, src);
+  return 0;
+}
+
 #endif
-
-
 
 #ifdef WIN32
 #include <windows.h>
@@ -62,8 +98,10 @@ enum LearnType {NEURAL_NET, NEURAL_TISSUE, GENETIC_ALGORITHM};
 #define GAPARAMCOUNT 20
 
 #define INET_ADDR_LEN          128
-#define VERSION                1.0
 
+#ifndef VERSION			/* FMP, defined in automake's config.h */
+#define VERSION                1.0
+#endif
 
 /*
 //! @brief Get the value of pi

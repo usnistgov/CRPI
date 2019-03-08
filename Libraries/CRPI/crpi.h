@@ -22,9 +22,9 @@
 #include <vector>
 #include <string>
 #include <time.h>
-#include "..\Math\MatrixMath.h"
-#include "..\Math\VectorMath.h"
-#include "..\..\portable.h"
+#include "Math/MatrixMath.h"
+#include "Math/VectorMath.h"
+#include "portable.h"
 
 #ifndef WIN32
 #include <unistd.h>
@@ -38,7 +38,9 @@
 
 #else
 
+#ifndef LIBRARY_API		/* FMP */
 #define LIBRARY_API
+#endif
 
 #endif
 
@@ -118,6 +120,12 @@ typedef enum
   RADIAN = 0,
   DEGREE
 } CanonAngleUnit;
+
+typedef enum
+{
+  PRISMATIC = 0,
+  REVOLUTE
+} CanonJointType;		// FMP
 
 //! @brief Vector representation of an axis of rotation
 //!
@@ -488,14 +496,13 @@ struct robotAxes
   //!
   void print()
   {
-    for (int i = 0; i < axes; ++i)
-    {
-      printf("%f", axis.at(i));// [i]);
-      if (i < (axes - 1))
-      {
+    for (int i = 0; i < axes; ++i) {
+      printf("%f", axis.at(i));
+      if (i < (axes - 1)) {
         printf(", ");
       }
     }
+    printf("\n");
   }
 
   //! @brief Calculate the distance between two axis vectors
@@ -851,6 +858,10 @@ struct CrpiRobotParams
   //!
   std::vector<CrpiToolDef> tools;
 
+  // FMP
+  //! @brief Path to initialization file
+  char initPath[256];
+  
   //! @brief Default constructor
   //!
   CrpiRobotParams()
@@ -871,6 +882,7 @@ struct CrpiRobotParams
     serial_sbits = 0;
     serial_handshake[0] = '\0';
     use_serial = true;
+    initPath[0] = '\0';		// FMP
   }
 
   //! @brief Assignment function
@@ -905,6 +917,7 @@ struct CrpiRobotParams
       {
         tools.push_back(*itr);
       }
+      strcpy_s(initPath, source.initPath);
     }
     return *this;
   }
@@ -999,7 +1012,9 @@ public:
   //!
   ~crpi_timer ()
   {
+#ifdef WIN32			/* FMP, to match above */
     timeEndPeriod (1);
+#endif
   };
 
   //! @brief Start the timer if it isn't already running, otherwise

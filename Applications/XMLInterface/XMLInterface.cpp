@@ -326,7 +326,7 @@ void nodDemo(void *param)
 
 //! @brief Main program method
 //!
-void main ()
+int main ()			// FMP
 {
   ifstream infile("xmlsettings.dat");
   string robot, path;
@@ -431,4 +431,6 @@ void main ()
     timer.waitUntil(100);
     ulapi_task_stop((ulapi_task_struct*)*taskIter);
   }
+
+  return 0;			// FMP
 }

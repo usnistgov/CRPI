@@ -86,7 +86,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>..\..\Debug;..\..\Libraries\ThirdParty\OpenCV2\lib;..\..\Libraries\ThirdParty\LeapSDK\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Library_CRPI.lib;Winmm.lib;ulapi_VS2015.lib;HRI.lib;Serial.lib;MotionPrims.lib;MoCap.lib;ForceTorque.lib;DAQ.lib;Leap.lib;opencv_core2411.lib;opencv_highgui2411.lib;opencv_imgproc2411.lib;opencv_calib3d2411.lib;ws2_32.lib</AdditionalDependencies>
+      <AdditionalDependencies>Library_CRPI.lib;Winmm.lib;ulapi_VS2015.lib;HRI.lib;Serial.lib;MotionPrims.lib;MoCap.lib;Leap.lib;opencv_core2411.lib;opencv_highgui2411.lib;opencv_imgproc2411.lib;opencv_calib3d2411.lib;ws2_32.lib</AdditionalDependencies>
       <OutputFile>..\..\Debug\CRPI_Test.exe</OutputFile>
     </Link>
   </ItemDefinitionGroup>

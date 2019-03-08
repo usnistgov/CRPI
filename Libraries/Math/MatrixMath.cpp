@@ -148,21 +148,9 @@ namespace Math
   }
 
 
-  LIBRARY_API bool matrixPseudoInv (matrix &in, matrix &out)
-  {
-    matrix in_T, inTin, inTinInv;
-    bool state;
-
-    state = matrixTrans (in, in_T);
-
-    state = state ? matrixMult (in_T, in, inTin) : state;
-    state = state ? matrixInv (inTin, inTinInv) : state;
-    state = state ? matrixMult (inTinInv, in_T, out) : state;
-    return state;
-  }
-
   //! Based on gaussj from "Numerical Recipes in C"
   //!
+  // FMP moved before matrixPseudoInv() which calls this
   LIBRARY_API bool matrixInv (matrix &val1, matrix &out)
   {
     int *indxc, *indxr, *ipiv;
@@ -285,6 +273,19 @@ namespace Math
     return true;
   }
 
+
+  LIBRARY_API bool matrixPseudoInv (matrix &in, matrix &out)
+  {
+    matrix in_T, inTin, inTinInv;
+    bool state;
+
+    state = matrixTrans (in, in_T);
+
+    state = state ? matrixMult (in_T, in, inTin) : state;
+    state = state ? matrixInv (inTin, inTinInv) : state;
+    state = state ? matrixMult (inTinInv, in_T, out) : state;
+    return state;
+  }
 
 
   LIBRARY_API bool rotMatrixEulerConvert (matrix &m, vector<double> &out)

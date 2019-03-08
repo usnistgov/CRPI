@@ -738,7 +738,7 @@ namespace crpi_robot
     }
     else
     {
-      CANON_FAILURE;
+      return CANON_FAILURE;	// FMP added 'return'
     }
     return CANON_REJECT;
   }

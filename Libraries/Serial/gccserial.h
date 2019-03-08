@@ -6,7 +6,9 @@
 typedef uint8_t BYTE;
 typedef uint32_t DWORD;
 typedef int32_t LONG;
+#ifdef LONGLONG			/* FMP */
 typedef int64_t LONGLONG;
+#endif
 
 typedef int                 BOOL;
 typedef unsigned short      WORD;
