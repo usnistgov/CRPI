@@ -76,7 +76,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\Libraries\;..\..\Libraries\Sensor\HRI;..\..\Libraries\ThirdParty\LeapSDK\include;..\..\Libraries\RegistrationKit;..\..\Libraries\ThirdParty\NI\NIDAQ\include;..\..\Libraries\Math;..\..\Libraries\ThirdParty\Vicon\include;..\..\Libraries\ulapi;..\..\Libraries\ulapi\src;..\..\Libraries\Sensor\Force-Torque;..\..\Libraries\Sensor\DAQ;..\..\Libraries\Sensor\MoCap;..\..\Libraries\CRPI;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Libraries\;..\..\Libraries\RegistrationKit;..\..\Libraries\Math;..\..\Libraries\ulapi;..\..\Libraries\ulapi\src;..\..\Libraries\CRPI;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBCS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile>..\..\Debug\CRPI_Test\CRPI_Test.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>..\..\Debug\</AssemblerListingLocation>
@@ -85,8 +85,8 @@
       <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>..\..\Debug;..\..\Libraries\ThirdParty\OpenCV2\lib;..\..\Libraries\ThirdParty\LeapSDK\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Library_CRPI.lib;Winmm.lib;ulapi_VS2015.lib;HRI.lib;Serial.lib;MotionPrims.lib;MoCap.lib;ForceTorque.lib;DAQ.lib;Leap.lib;opencv_core2411.lib;opencv_highgui2411.lib;opencv_imgproc2411.lib;opencv_calib3d2411.lib;ws2_32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Debug;..\..\Libraries\ThirdParty\OpenCV2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Library_CRPI.lib;Winmm.lib;ulapi_VS2015.lib;Serial.lib;opencv_core2411.lib;opencv_highgui2411.lib;opencv_imgproc2411.lib;opencv_calib3d2411.lib;ws2_32.lib</AdditionalDependencies>
       <OutputFile>..\..\Debug\CRPI_Test.exe</OutputFile>
     </Link>
   </ItemDefinitionGroup>
